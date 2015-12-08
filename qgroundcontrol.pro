@@ -893,15 +893,6 @@ SOURCES += src/main.cc \
     src/ui/EKFMonitor.cpp \
     src/Settings.cpp
 
-MacBuild | WindowsBuild : contains(GOOGLEEARTH, enable) { #fix this to make sense ;)
-    message(Including support for Google Earth)
-    QT +=  webkit webkitwidgets
-    HEADERS +=  src/ui/map3D/QGCWebPage.h
-    SOURCES +=  src/ui/map3D/QGCWebPage.cc
-} else {
-    message(Skipping support for Google Earth)
-}
-
 contains(DEFINES, ENABLE_CAMRAVIEW){
     message(Including support for Camera View)
     HEADERS += src/ui/CameraView.h

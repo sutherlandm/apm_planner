@@ -175,22 +175,6 @@ OSGDependency {
 }
 
 #
-# Google Earth
-#
-
-MacBuild | WindowsBuild : contains(GOOGLEEARTH, enable) { #fix this to make sense ;)
-    message(Including support for Google Earth)
-
-    HEADERS += src/ui/map3D/QGCGoogleEarthView.h
-    SOURCES += src/ui/map3D/QGCGoogleEarthView.cc
-    WindowsBuild {
-        CONFIG += qaxcontainer
-    }
-} else {
-    message(Skipping support for Google Earth)
-}
-
-#
 # Protcol Buffers for PixHawk
 #
 

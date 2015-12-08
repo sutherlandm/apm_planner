@@ -768,14 +768,6 @@ void MainWindow::buildCommonWidgets()
         addToCentralStackedWidget(q3DWidget, VIEW_3DWIDGET, tr("Local 3D"));
     }
 #endif
-
-#if defined(GOOGLE_EARTH_VIEW)/*(defined _MSC_VER) | (defined Q_OS_MAC)*/
-    if (!earthWidget)
-    {
-        earthWidget = new QGCGoogleEarthView(this);
-        addToCentralStackedWidget(earthWidget,VIEW_GOOGLEEARTH, tr("Google Earth"));
-    }
-#endif
 }
 
 void MainWindow::addTool(SubMainWindow *parent,VIEW_SECTIONS view,QDockWidget* widget, const QString& title, Qt::DockWidgetArea area)
