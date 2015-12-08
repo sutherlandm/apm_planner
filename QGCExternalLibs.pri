@@ -22,43 +22,6 @@ WindowsBuild {
 }
 
 #
-# QUpgrade
-#
-
-exists(qupgrade) {
-    message(Including support for QUpgrade)
-
-    DEFINES += QUPGRADE_SUPPORT
-
-    INCLUDEPATH += qupgrade/src/apps/qupgrade
-
-    FORMS += \
-        qupgrade/src/apps/qupgrade/dialog_bare.ui \
-        qupgrade/src/apps/qupgrade/boardwidget.ui
-
-    HEADERS += \
-        qupgrade/src/apps/qupgrade/qgcfirmwareupgradeworker.h \
-        qupgrade/src/apps/qupgrade/uploader.h \
-        qupgrade/src/apps/qupgrade/dialog_bare.h \
-        qupgrade/src/apps/qupgrade/boardwidget.h
-
-    SOURCES += \
-        qupgrade/src/apps/qupgrade/qgcfirmwareupgradeworker.cpp \
-        qupgrade/src/apps/qupgrade/uploader.cpp \
-        qupgrade/src/apps/qupgrade/dialog_bare.cpp \
-        qupgrade/src/apps/qupgrade/boardwidget.cpp
-
-    RESOURCES += \
-        qupgrade/qupgrade.qrc
-
-    LinuxBuild:CONFIG += qesp_linux_udev
-
-    include(qupgrade/libs/qextserialport/src/qextserialport.pri)
-} else {
-    message(Skipping support for QUpgrade)
-}
-
-#
 # MAVLink
 #
 
